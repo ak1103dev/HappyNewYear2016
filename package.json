@@ -1,0 +1,16 @@
+{
+  "name": "new_year",
+  "version": "0.0.0",
+  "description": "event for new year",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "ak1103dev",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.13.3",
+    "ejs": "~2.3.4"
+  }
+}

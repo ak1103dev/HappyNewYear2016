@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta charset="utf-8">
+				<title>Happy New Year 2016</title>
+
+				<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+				<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		</head>
+		<body>
+				<div class="container-fluid text-center">
+						<div class="page-header">
+								<h1>ขอ 3 คำสำหรับปีใหม่นี้</h1>
+						</div>
+
+						<div class="row">
+								<div class="col-md-7">	
+										<image id="image" style="width:200;height:200" src="http://cache.desktopnexus.com/thumbseg/1275/1275696-bigthumbnail.jpg"></image>
+										<canvas id="myCanvas" width="450" height="300" style="border:1px solid #d3d3d3;">
+												Your browser does not support the HTML5 canvas tag.</canvas>
+								</div>
+
+								<div class="col-md-5">	
+										<form role="form">
+												<div class="form-group">
+														<h3><label for="inputlg">คำที่ 1</label></h3>
+														<input class="form-control input-lg" id="word1" type="text">
+												</div>
+
+												<div class="form-group">
+														<h3><label for="inputlg">คำที่ 2</label></h3>
+														<input class="form-control input-lg" id="word2" type="text">
+												</div>
+
+												<div class="form-group">
+														<h3><label for="inputlg">คำที่ 3</label></h3>
+														<input class="form-control input-lg" id="word3" type="text">
+												</div>
+										</form>
+										<button class="btn btn-info" onclick="drawText()">แสดงภาพตัวอย่าง</button>
+								</div>
+						</div>
+
+						<div class="panel-body">
+								<button type="button" class="btn btn-primary btn-lg" onclick="drawText()">
+										<i class="fa fa-facebook"></i>  share with facebook
+								</button>
+						</div>
+				</div>
+
+				<script>
+						$("#image").hide();
+
+						var c = document.getElementById("myCanvas");
+						var ctx = c.getContext("2d");
+
+						var img = document.getElementById("image");
+						ctx.drawImage(img, 0, 0);
+
+						function drawText() {
+								ctx.drawImage(img, 0, 0);
+
+								var word1 = document.getElementById("word1").value;
+								var word2 = document.getElementById("word2").value;
+								var word3 = document.getElementById("word3").value;
+
+								var word = word1+word2+word3;
+
+								ctx.font = "50px Arial";
+								ctx.fillStyle = "#ffbf00";
+
+								ctx.fillText(word,150,180);
+						}
+				</script>
+		</body>
+</html>
